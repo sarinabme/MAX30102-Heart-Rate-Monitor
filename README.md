@@ -202,3 +202,49 @@ The final result remains visible for **7 seconds**. The system then performs a *
 
 After the countdown, the system automatically returns to the finger-detection stage and waits for a new measurement.
 
+
+<br>
+
+## 📐 BPM Algorithm
+
+The heart rate is estimated from the pulse signal acquired by the **MAX30102 PPG sensor**.
+
+### Beat Detection
+
+During the measurement window, the Arduino continuously reads the sensor's infrared (IR) signal. Individual heartbeats are detected using the `checkForBeat()` function provided by the MAX30102 heart-rate library.
+
+When a heartbeat is detected, the system records its timestamp using `millis()`.
+
+The time interval between two consecutive detected beats is calculated as:
+
+**Δt = t₂ − t₁**
+
+where:
+
+* **t₁** = timestamp of the previous detected beat
+* **t₂** = timestamp of the current detected beat
+* **Δt** = time interval between consecutive beats in milliseconds
+
+### Instantaneous BPM
+
+The instantaneous heart rate is calculated from the beat-to-beat interval:
+
+**BPM = 60,000 / Δt**
+
+The factor **60,000** converts milliseconds to minutes.
+
+Only calculated BPM values within the programmed range of **20–220 BPM** are accepted for averaging.
+
+### Average BPM
+
+During the **20-second measurement window**, all valid instantaneous BPM values are accumulated.
+
+The final average is calculated as:
+
+**Average BPM = Sum of valid BPM values / Number of valid BPM values**
+
+If no valid BPM values are detected during the measurement period, the system displays:
+
+`No Reading`
+
+This approach provides a simple average of the detected beat-to-beat heart-rate estimates over the measurement window.
