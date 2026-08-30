@@ -311,3 +311,50 @@ Both the MAX30102 and the LCD share the Arduino UNO's I²C bus through **SDA (A4
 > **Note:** The I²C address `0x27` is specific to the LCD I²C module used in this prototype and may differ between modules.
 
 
+<br>
+
+
+## 💻 Installation
+
+### 1. Install Arduino IDE
+
+Install the **Arduino IDE** on your computer.
+
+### 2. Connect the Arduino UNO
+
+Connect the Arduino UNO to the computer using the **USB-B cable**.
+
+### 3. Install Required Libraries
+
+The project requires the following libraries:
+
+* `Wire.h`
+* `LiquidCrystal_I2C.h`
+* `MAX30105.h`
+* `heartRate.h`
+
+`Wire.h` is included with the Arduino environment. The other libraries should be installed through the Arduino Library Manager or added manually if required.
+
+### 4. Open the Project
+
+Open the Arduino source file:
+
+```text
+src/HeartRateMonitor.ino
+```
+
+### 5. Select the Board and Port
+
+In Arduino IDE:
+
+**Tools → Board → Arduino UNO**
+
+Then select the appropriate serial port under:
+
+**Tools → Port**
+
+### 6. Upload the Code
+
+Compile and upload the program to the Arduino UNO.
+
+After uploading, the system is ready for operation.
