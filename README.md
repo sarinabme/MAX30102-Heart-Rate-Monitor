@@ -463,3 +463,12 @@ The prototype can be further improved through the following developments:
 * **Improved Display Interface** — Replace the 16×2 LCD with a higher-resolution display such as an OLED.
 * **Wireless Connectivity** — Add Bluetooth connectivity for transferring measurements to another device.
 * **PC/Mobile Visualization** — Develop a graphical interface for real-time monitoring and historical data visualization.
+
+
+<br>
+
+
+## 📄 License
+
+This project is licensed under the **MIT License**.
+
