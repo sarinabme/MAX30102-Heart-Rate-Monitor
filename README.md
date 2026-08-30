@@ -100,3 +100,16 @@ Demonstration of the system response when **no valid heart-rate measurement is o
 * **Pin Headers** — Component connections
 * **USB-B Cable** — Arduino power and programming
 
+<br>
+
+## 🧠 Architecture
+
+The system follows a simple real-time acquisition and processing architecture.
+
+The **MAX30102** captures optical pulse signals using photoplethysmography (PPG). The acquired data is processed by the **Arduino UNO**, which detects heartbeats, calculates BPM values, and computes the average heart rate over the measurement window.
+
+The calculated result is then classified according to predefined BPM thresholds. The **16×2 I2C LCD** provides visual feedback throughout the measurement process, while the **buzzer** provides audible status and alert feedback.
+
+### System Flow
+
+**MAX30102 → Signal Acquisition → Beat Detection → BPM Calculation → Averaging → Heart-Rate Classification → LCD / Buzzer Output**
