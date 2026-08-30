@@ -494,3 +494,12 @@ As an educational prototype, the system has several technical and practical limi
 8. **Sensor and Hardware Limitations**
    Measurement accuracy can be affected by sensor characteristics, hardware configuration, environmental conditions, and user interaction.
 
+
+<br>
+
+
+## 🩺 Medical Disclaimer
+
+**This project is an educational prototype designed for heart-rate monitoring and basic heart-rate classification. It is not a medical device and must not be used for diagnosis, treatment, or clinical decision-making. The displayed results may be affected by motion, finger placement, ambient light, and sensor limitations.**
+
+
