@@ -358,3 +358,44 @@ Then select the appropriate serial port under:
 Compile and upload the program to the Arduino UNO.
 
 After uploading, the system is ready for operation.
+
+
+<br>
+
+## ▶️ Usage
+
+Follow these steps to perform a heart-rate measurement:
+
+1. Power on the Arduino UNO.
+2. Wait for the system initialization message.
+3. When the LCD displays **`Place Finger / Ready...`**, place a finger gently on the MAX30102 sensor.
+4. Wait for the short confirmation beep indicating that the finger has been detected.
+5. Keep the finger stable during the **20-second measurement window**.
+6. The LCD displays the remaining measurement time.
+7. After measurement, the system displays **`Analyzing... / Please Wait`** while processing the collected data.
+8. The final average BPM and classification are displayed on the LCD.
+9. If the result is classified as **BRADYCARDIA** or **TACHYCARDIA**, the buzzer provides an audible alert.
+10. After **7 seconds**, the system performs a **5-second countdown** and automatically prepares for a new measurement.
+
+### Example LCD Flow
+
+```text
+Heart Monitor
+Starting...
+       ↓
+Place Finger
+Ready...
+       ↓
+Measuring...
+Time: 15s
+       ↓
+Analyzing...
+Please Wait
+       ↓
+Avg: 74 BPM
+NORMAL
+       ↓
+New Test In
+5 sec
+```
+
