@@ -399,3 +399,24 @@ New Test In
 5 sec
 ```
 
+
+<br>
+
+
+## 🧪 Testing
+
+The prototype was tested under several operating conditions to evaluate its basic functionality and response to different measurement scenarios.
+
+| Test Case                  | Condition                         | Expected Behavior                    |
+| :------------------------- | :-------------------------------- | :----------------------------------- |
+| **System Startup**         | Arduino powered on                | Display initialization message       |
+| **Finger Detection**       | Finger placed on MAX30102         | Measurement begins                   |
+| **No Finger**              | No finger detected for 30 seconds | Display `No Finger / Try Again`      |
+| **Heart Rate Measurement** | Valid pulse signal detected       | BPM values are calculated            |
+| **Normal Range**           | Average BPM between 60–100        | Display `NORMAL`                     |
+| **Low BPM**                | Average BPM below 60              | Display `BRADYCARDIA` + buzzer alert |
+| **High BPM**               | Average BPM above 100             | Display `TACHYCARDIA` + buzzer alert |
+| **Invalid Measurement**    | No valid BPM obtained             | Display `No Reading`                 |
+| **Measurement Reset**      | Test completed                    | 5-second countdown before new test   |
+
+These tests were designed to verify the main functional states implemented in the program, including normal operation, user interaction, abnormal classification, and basic error handling.
