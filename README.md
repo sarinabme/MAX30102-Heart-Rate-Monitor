@@ -311,6 +311,11 @@ Both the MAX30102 and the LCD share the Arduino UNO's I²C bus through **SDA (A4
 > **Note:** The I²C address `0x27` is specific to the LCD I²C module used in this prototype and may differ between modules.
 
 
+### Fritzing Wiring Diagram
+
+The following diagram illustrates the complete hardware wiring of the prototype, including the Arduino UNO, MAX30102 sensor, 16×2 I2C LCD, buzzer, breadboard, power connections, and I2C communication lines.
+
+![Fritzing Wiring Diagram](media/images/wiring-diagram.png)
 <br>
 
 
