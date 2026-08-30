@@ -420,3 +420,46 @@ The prototype was tested under several operating conditions to evaluate its basi
 | **Measurement Reset**      | Test completed                    | 5-second countdown before new test   |
 
 These tests were designed to verify the main functional states implemented in the program, including normal operation, user interaction, abnormal classification, and basic error handling.
+
+
+<br>
+
+## 📊 Results
+
+The prototype was successfully tested through multiple measurement scenarios. The observed outputs demonstrate the implemented measurement, classification, alert, and error-handling behaviors.
+
+### Normal Measurements
+
+Two example measurements produced results within the predefined normal range:
+
+| Test | Average BPM | Classification |
+| :--: | ----------: | :------------- |
+|   1  |  **74 BPM** | **NORMAL**     |
+|   2  |  **83 BPM** | **NORMAL**     |
+
+### Low Heart-Rate Classification
+
+Additional tests produced:
+
+| Test | Average BPM | System Classification |
+| :--: | ----------: | :-------------------- |
+|   3  |  **58 BPM** | **BRADYCARDIA**       |
+|   4  |  **27 BPM** | **BRADYCARDIA**       |
+
+In both cases, the buzzer was activated according to the programmed alert logic.
+
+### No Reading Test
+
+A separate test resulted in:
+
+```text
+Analyzing...
+Please Wait
+        ↓
+No Reading
+```
+
+This demonstrates that the system does not display an average BPM when no valid heart-rate data is obtained.
+
+> **Important:** The values above represent prototype measurements and software classifications. They should not be interpreted as clinical measurements or medical diagnoses.
+
