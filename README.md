@@ -467,8 +467,12 @@ The prototype can be further improved through the following developments:
 
 <br>
 
+---
 
-## 📄 License
+### 👩‍💻 Author
 
-This project is licensed under the **MIT License**.
+**Developed by Sarina Jou**
 
+### 📄 License
+
+This project is licensed under the **MIT License** and is intended for educational and research purposes.
