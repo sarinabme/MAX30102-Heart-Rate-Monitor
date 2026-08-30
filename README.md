@@ -69,3 +69,34 @@ Demonstration of the measurement workflow, from **system initialization and fing
 [▶️ Watch the No Reading Demo](media/videos/no-reading-handling.mp4)
 
 Demonstration of the system response when **no valid heart-rate measurement is obtained**.
+
+<br>
+
+## ✨ Features
+
+*  **Real-Time Heart Rate Monitoring** using the MAX30102 optical pulse sensor
+*  **BPM Calculation** from detected pulse intervals
+*  **Average BPM Calculation** over a 20-second measurement window
+*  **16×2 I2C LCD Display** for real-time system status and measurement results
+*  **Measurement Countdown** displayed during the acquisition process
+*  **Audible Feedback** using a buzzer for system status and heart-rate alerts
+*  **Heart-Rate Classification** based on predefined BPM thresholds
+*  **No Finger Detection** with a 30-second timeout
+*  **No Reading Handling** when no valid BPM data is obtained
+*  **Automatic Test Reset** with a countdown before starting a new measurement
+*  **Serial Monitor Output** for debugging and BPM monitoring
+
+<br>
+
+## 🔧 Hardware
+
+* **Arduino UNO** — Microcontroller
+* **MAX30102** — Optical pulse sensor (PPG)
+* **16×2 LCD** — User interface and result display
+* **I2C Module** — Serial communication interface for the LCD
+* **Buzzer** — Audible status and alert feedback
+* **Breadboard** — Prototyping platform
+* **Jumper Wires** — Electrical connections
+* **Pin Headers** — Component connections
+* **USB-B Cable** — Arduino power and programming
+
