@@ -463,3 +463,34 @@ This demonstrates that the system does not display an average BPM when no valid 
 
 > **Important:** The values above represent prototype measurements and software classifications. They should not be interpreted as clinical measurements or medical diagnoses.
 
+
+<br>
+
+## ⚠️ Limitations
+
+As an educational prototype, the system has several technical and practical limitations:
+
+1. **Motion Artifacts**
+   Finger movement can introduce artifacts into the PPG signal and may affect beat detection and BPM estimation.
+
+2. **Finger Placement**
+   Incorrect or inconsistent finger placement on the MAX30102 may reduce signal quality and affect the measurement.
+
+3. **Ambient Light**
+   External light conditions may influence optical measurements and reduce signal reliability.
+
+4. **Short Measurement Window**
+   The system uses a **20-second measurement window**, which is suitable for demonstrating the prototype but is not sufficient for comprehensive or long-term clinical monitoring.
+
+5. **Simple Threshold Classification**
+   The classification is based only on average BPM thresholds. The system does not analyze **ECG morphology, arrhythmias, heart-rate variability, or rhythm irregularities**.
+
+6. **PPG-Based Measurement**
+   The system relies on an optical PPG sensor rather than ECG-based cardiac electrical measurements.
+
+7. **Prototype-Level Signal Processing**
+   The current implementation uses a relatively simple beat-detection and averaging approach and does not include advanced filtering or comprehensive signal-quality assessment.
+
+8. **Sensor and Hardware Limitations**
+   Measurement accuracy can be affected by sensor characteristics, hardware configuration, environmental conditions, and user interaction.
+
