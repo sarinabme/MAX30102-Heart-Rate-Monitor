@@ -503,3 +503,19 @@ As an educational prototype, the system has several technical and practical limi
 **This project is an educational prototype designed for heart-rate monitoring and basic heart-rate classification. It is not a medical device and must not be used for diagnosis, treatment, or clinical decision-making. The displayed results may be affected by motion, finger placement, ambient light, and sensor limitations.**
 
 
+<br>
+
+
+## 🚀 Future Work
+
+The prototype can be further improved through the following developments:
+
+* **Motion Artifact Reduction** — Improve robustness against finger movement and motion-related signal artifacts.
+* **Digital Filtering** — Apply digital filters to improve PPG signal quality and reduce noise.
+* **Signal Quality Assessment** — Evaluate the quality and reliability of the acquired pulse signal before calculating BPM.
+* **Automatic Sensor Recovery** — Improve system recovery when the sensor becomes disconnected or produces invalid data.
+* **Data Logging** — Store measurements for later analysis and visualization.
+* **Advanced Heart-Rate Analysis** — Explore additional features such as heart-rate variability and rhythm analysis.
+* **Improved Display Interface** — Replace the 16×2 LCD with a higher-resolution display such as an OLED.
+* **Wireless Connectivity** — Add Bluetooth connectivity for transferring measurements to another device.
+* **PC/Mobile Visualization** — Develop a graphical interface for real-time monitoring and historical data visualization.
