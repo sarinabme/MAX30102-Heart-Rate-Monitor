@@ -248,3 +248,66 @@ If no valid BPM values are detected during the measurement period, the system di
 `No Reading`
 
 This approach provides a simple average of the detected beat-to-beat heart-rate estimates over the measurement window.
+
+
+<br>
+## ❤️ Heart Rate Classification
+
+The calculated average BPM is classified using predefined thresholds implemented in the program.
+
+|   Average BPM  | Classification  | Buzzer                  |
+| :------------: | :-------------- | :---------------------- |
+|  **< 60 BPM**  | **BRADYCARDIA** | Continuous alert        |
+| **60–100 BPM** | **NORMAL**      | Short confirmation beep |
+|  **> 100 BPM** | **TACHYCARDIA** | Continuous alert        |
+
+The classification is based solely on the predefined BPM thresholds used in this prototype. It is intended for **educational demonstration and basic heart-rate classification**, not medical diagnosis.
+
+### Classification Logic
+
+```text
+Average BPM
+     │
+     ├── < 60 ────────→ BRADYCARDIA
+     │
+     ├── 60–100 ──────→ NORMAL
+     │
+     └── > 100 ───────→ TACHYCARDIA
+```
+
+
+<br>
+
+
+## 🔌 Wiring
+
+The MAX30102 sensor and the 16×2 LCD communicate with the Arduino UNO through the **I²C interface**.
+
+### Pin Connections
+
+| Component        | Pin    | Arduino UNO |
+| :--------------- | :----- | :---------: |
+| **MAX30102**     | SDA    |      A4     |
+| **MAX30102**     | SCL    |      A5     |
+| **MAX30102**     | VCC    |    3.3V     |
+| **MAX30102**     | GND    |     GND     |
+| **16×2 I2C LCD** | SDA    |      A4     |
+| **16×2 I2C LCD** | SCL    |      A5     |
+| **16×2 I2C LCD** | VCC    |      5V     |
+| **16×2 I2C LCD** | GND    |     GND     |
+| **Buzzer**       | Signal |      D8     |
+| **Buzzer**       | GND    |     GND     |
+
+### I²C Configuration
+
+The LCD is initialized using the I²C address:
+
+```cpp
+LiquidCrystal_I2C lcd(0x27, 16, 2);
+```
+
+Both the MAX30102 and the LCD share the Arduino UNO's I²C bus through **SDA (A4)** and **SCL (A5)**.
+
+> **Note:** The I²C address `0x27` is specific to the LCD I²C module used in this prototype and may differ between modules.
+
+
