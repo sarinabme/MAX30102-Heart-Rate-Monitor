@@ -120,88 +120,25 @@ The calculated result is then classified according to predefined BPM thresholds.
 
 ## ⚙️ How It Works
 
-The system operates through a sequential measurement cycle:
-
-### 1. System Initialization
-
-When the Arduino is powered on, the system initializes the LCD, buzzer, and MAX30102 sensor. The LCD displays:
-
-`Heart Monitor`
-`Starting...`
-
-If the MAX30102 is not detected, the system displays an error message and stops operation.
-
-### 2. Finger Detection
-
-After successful initialization, the LCD prompts the user to place a finger on the MAX30102:
-
-`Place Finger`
-`Ready...`
-
-The system monitors the infrared (IR) signal and waits until a sufficient signal level is detected. If no finger is detected within **30 seconds**, the system displays `No Finger / Try Again` and returns to the beginning of the measurement cycle.
-
-### 3. Heart Rate Measurement
-
-Once a finger is detected, the system provides a short buzzer signal and starts a **20-second measurement window**.
-
-During this period, the MAX30102 continuously provides IR data. The `checkForBeat()` algorithm is used to detect individual heartbeats from the acquired signal.
-
-The LCD displays the measurement status and remaining time:
-
-`Measuring...`
-`Time: XXs`
-
-### 4. BPM Calculation
-
-For each detected heartbeat, the time interval between consecutive beats is calculated.
-
-The instantaneous BPM is calculated using:
-
-**BPM = 60,000 / Δt**
-
-where **Δt** is the time interval between two consecutive detected beats in milliseconds.
-
-Only BPM values within the programmed valid range of **20–220 BPM** are included in the average calculation.
-
-### 5. Average BPM
-
-After the 20-second measurement period, the system calculates the average BPM from all valid detected heartbeats.
-
-The LCD temporarily displays:
-
-`Analyzing...`
-`Please Wait`
-
-### 6. Heart-Rate Classification
-
-The calculated average BPM is classified using predefined thresholds:
-
-* **BPM < 60 → BRADYCARDIA**
-* **60 ≤ BPM ≤ 100 → NORMAL**
-* **BPM > 100 → TACHYCARDIA**
-
-The classification is based solely on the predefined BPM thresholds implemented in the program and does not represent a medical diagnosis.
-
-### 7. Result Display and Alert
-
-The final average BPM and classification are displayed on the LCD.
-
-For example:
-
-`Avg: 74 BPM`
-`NORMAL`
-
-If the result is classified as **BRADYCARDIA** or **TACHYCARDIA**, the buzzer provides an audible alert.
-
-### 8. New Measurement Cycle
-
-The final result remains visible for **7 seconds**. The system then performs a **5-second countdown**:
-
-`New Test In`
-`5 sec`
-
-After the countdown, the system automatically returns to the finger-detection stage and waits for a new measurement.
-
+```text
+System Initialization
+        ↓
+   Place Finger
+        ↓
+20-Second Measurement
+        ↓
+   Beat Detection
+        ↓
+   BPM Calculation
+        ↓
+    Averaging
+        ↓
+Heart-Rate Classification
+        ↓
+ LCD + Buzzer Output
+        ↓
+  New Test Countdown
+```
 
 <br>
 
@@ -251,6 +188,8 @@ This approach provides a simple average of the detected beat-to-beat heart-rate 
 
 
 <br>
+
+
 ## ❤️ Heart Rate Classification
 
 The calculated average BPM is classified using predefined thresholds implemented in the program.
